@@ -222,6 +222,7 @@
          scrollY: 300,
         scrollX:        true,
         paging:         false,
+        order: [[6, 'desc']],
         initComplete: function () {
             this.api().columns([0,2,3,4,7]).every( function () {
                 var column = this;
