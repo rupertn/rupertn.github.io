@@ -72,9 +72,9 @@
           <table id="hotel_values" class="table hover order-column nowrap" style="width:100%">
               <thead>
                 <tr style="text-align: right;">
-                  <th>Metropolitan Area</th>
                   <th>Hotel</th>
-                  <th>City/Town/Area</th>
+                  <th>Region</th>
+                  <th>City/Town</th>
                   <th>Brand</th>
                   <th>Category</th>
                   <th>Standard Points</th>
@@ -84,8 +84,8 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Toronto, Ontario</td>
                   <td>Delta Hotels Toronto East</td>
+                  <td>Toronto, Ontario</td>
                   <td>Toronto</td>
                   <td>Delta Hotels and Resorts</td>
                   <td>3</td>
@@ -94,8 +94,8 @@
                   <td>High</td>
                 </tr>
                 <tr>
-                  <td>Kauai, Hawaii</td>
                   <td>Sheraton Kauai Coconut Beach Resort</td>
+                  <td>Kauai, Hawaii</td>
                   <td>Kapaa</td>
                   <td>Sheraton</td>
                   <td>4</td>
@@ -104,8 +104,8 @@
                   <td>Medium</td>
                 </tr>
                 <tr>
-                  <td>Washington DC/Baltimore</td>
                   <td>Sheraton Pentagon City Hotel</td>
+                  <td>Washington DC/Baltimore</td>
                   <td>Arlington</td>
                   <td>Sheraton</td>
                   <td>4</td>
@@ -114,8 +114,8 @@
                   <td>High</td>
                 </tr>
                 <tr>
-                  <td>Edmonton, Alberta</td>
                   <td>The Westin Edmonton</td>
+                  <td>Edmonton, Alberta</td>
                   <td>Edmonton</td>
                   <td>Westin Hotels &amp; Resorts</td>
                   <td>3</td>
@@ -124,8 +124,8 @@
                   <td>High</td>
                 </tr>
                 <tr>
-                  <td>New York City, New York</td>
                   <td>Stamford Marriott Hotel &amp; Spa</td>
+                  <td>New York City, New York</td>
                   <td>Stamford</td>
                   <td>Marriott Hotels &amp; Resorts</td>
                   <td>3</td>
@@ -134,8 +134,8 @@
                   <td>High</td>
                 </tr>
                 <tr>
-                  <td>Chicago, Illinois</td>
                   <td>Hotel Chicago Downtown, Autograph Collection</td>
+                  <td>Chicago, Illinois</td>
                   <td>Chicago</td>
                   <td>Autograph Collection</td>
                   <td>5</td>
@@ -144,8 +144,8 @@
                   <td>High</td>
                 </tr>
                 <tr>
-                  <td>Chicago, Illinois</td>
                   <td>The Westin Chicago Northwest</td>
+                  <td>Chicago, Illinois</td>
                   <td>Itasca</td>
                   <td>Westin Hotels &amp; Resorts</td>
                   <td>3</td>
@@ -154,8 +154,8 @@
                   <td>High</td>
                 </tr>
                 <tr>
-                  <td>Chicago, Illinois</td>
                   <td>Renaissance Chicago O'Hare Suites Hotel</td>
+                  <td>Chicago, Illinois</td>
                   <td>Chicago</td>
                   <td>Renaissance Hotels</td>
                   <td>4</td>
@@ -166,9 +166,9 @@
               </tbody>
               <tfoot>
                  <tr style="text-align: right;">
-                  <th>Metropolitan Area</th>
                   <th>Hotel</th>
-                  <th>City/Town/Area</th>
+                  <th>Region</th>
+                  <th>City/Town</th>
                   <th>Brand</th>
                   <th>Category</th>
                   <th>Standard Points</th>
@@ -219,12 +219,14 @@
     
   <script> $(document).ready(function() {
     $('#hotel_values').DataTable( {
-         scrollY: 300,
+        scrollY: 300,
         scrollX:        true,
+        
         paging:         false,
         order: [[6, 'desc']],
+        fixedColumns: {leftColumns: 1},
         initComplete: function () {
-            this.api().columns([0,2,3,4,7]).every( function () {
+            this.api().columns([1,2,3,4,7]).every( function () {
                 var column = this;
                 var select = $('<select><option value=""></option></select>')
                     .appendTo( $(column.footer()).empty() )
