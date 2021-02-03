@@ -1675,6 +1675,11 @@ pre code {
 .table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.table tfoot th{
+    background-color: #f8f9fa;
 }
 
 .table tbody + tbody {
@@ -10241,6 +10246,7 @@ a.text-dark:hover, a.text-dark:focus {
   .table td,
   .table th {
     background-color: #fff !important;
+    white-space: nowrap;
   }
   .table-bordered th,
   .table-bordered td {

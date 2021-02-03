@@ -15,8 +15,11 @@
 
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
-  
+    
   <link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet">
+    
+  <link href="https://cdn.datatables.net/fixedcolumns/3.3.2/css/fixedColumns.dataTables.min.css" rel="stylesheet">
+    
 </head>
 
 <body id="page-top">
@@ -220,9 +223,8 @@
   <script> $(document).ready(function() {
     $('#hotel_values').DataTable( {
         scrollY: 300,
-        scrollX:        true,
-        
-        paging:         false,
+        scrollX: true,
+        paging: false,
         order: [[6, 'desc']],
         fixedColumns: {leftColumns: 1},
         initComplete: function () {
