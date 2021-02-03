@@ -46,7 +46,8 @@
 
   <header class="bg-primary text-white">
     <div class="container text-center">
-      <h2>The Best (and Worst) Value Marriott Bonvoy Redemptions in North America</h2>
+      <h2> The Best (and Worst) Value Marriott Properties in North America</h2>
+      <p class="lead">Helping You Get The Most Out</p>
       <p class="lead">Last updated on: February 3rd, 2021</p>
     </div>
   </header>
@@ -68,7 +69,7 @@
     <div class="container_fluid">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <table id="mytable" class="table hover order-column nowrap">
+          <table id="hotel_values" class="table hover order-column nowrap" style="width:100%">
               <thead>
                 <tr style="text-align: right;">
                   <th>Metropolitan Area</th>
@@ -76,9 +77,9 @@
                   <th>City/Town/Area</th>
                   <th>Brand</th>
                   <th>Category</th>
-                  <th>Standard Points Required</th>
+                  <th>Standard Points</th>
                   <th>Average Value (cpp)</th>
-                  <th>Estimate Confidence</th>
+                  <th>Confidence</th>
                 </tr>
               </thead>
               <tbody>
@@ -170,9 +171,9 @@
                   <th>City/Town/Area</th>
                   <th>Brand</th>
                   <th>Category</th>
-                  <th>Standard Points Required</th>
+                  <th>Standard Points</th>
                   <th>Average Value (cpp)</th>
-                  <th>Estimate Confidence</th>
+                  <th>Confidence</th>
                 </tr>
               </tfoot>
             </table>
@@ -214,33 +215,34 @@
   <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
   <script src="DataTables/Scroller-2.0.3/js/dataTables.scroller.min.js"></script>
   <script src="DataTables/Select-1.3.1/js/dataTables.select.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedcolumns/3.3.2/js/dataTables.fixedColumns.min.js"></script>
     
   <script> $(document).ready(function() {
-    // Setup - add a text input to each footer cell
-    $('#mytable tfoot th').each( function () {
-        var title = $(this).text();
-        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-    } );
- 
-    // DataTable
-    var table = $('#mytable').DataTable({
-            "scrollY": 300,
+    $('#hotel_values').DataTable( {
+         scrollY: 300,
+        scrollX:        true,
+        paging:         false,
         initComplete: function () {
-            // Apply the search
-            this.api().columns().every( function () {
-                var that = this;
+            this.api().columns([0,2,3,4,7]).every( function () {
+                var column = this;
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo( $(column.footer()).empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
  
-                $( 'input', this.footer() ).on( 'keyup change clear', function () {
-                    if ( that.search() !== this.value ) {
-                        that
-                            .search( this.value )
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
                             .draw();
-                    }
+                    } );
+ 
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
                 } );
             } );
         }
-    });
- 
+    } );
 } );
   </script>
 </body>
