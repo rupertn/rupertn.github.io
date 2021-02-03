@@ -9,34 +9,35 @@
   <meta name="author" content="">
 
   <title>Points Planner</title>
-
+    
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
-
+  
+  <link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Points Planner</a>
+      <a class="js-scroll-trigger btn btn-primary" href="#page-top">Points Planner</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Marriott Redemptions</a>
+            <a class="nav-link js-scroll-trigger" href="#overview">Overview</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Methodology</a>
+            <a class="nav-link js-scroll-trigger" href="#redemptions">Marriott Redemption Values</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#methodology">Methodology</a>
           </li>
         </ul>
       </div>
@@ -45,52 +46,154 @@
 
   <header class="bg-primary text-white">
     <div class="container text-center">
-      <h2>Identifying The Best Value Marriott Rewards Redemptions</h2>
-      <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
+      <h2>The Best (and Worst) Value Marriott Bonvoy Redemptions in North America</h2>
+      <p class="lead">Last updated on: February 3rd, 2021</p>
     </div>
   </header>
 
-  <section id="about">
+  <section id="overview">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>About this page</h2>
-          <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
-          <ul>
-            <li>Clickable nav links that smooth scroll to page sections</li>
-            <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-            <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-            <li>Minimal custom CSS so you are free to explore your own unique design options</li>
-          </ul>
+          <p class="lead">With more than 5000 properties in North America, Marriott offers selection of premium and luxury .  
+              
+              For <b>Marriott Bonvoy</b> members deciding how to redeem your hard earned Bonvoy points can be. 
+              With more than 5000 properties in North America, there is certaintly no lack of options.  </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="services" class="bg-light">
-    <div class="container">
+  <section id="redemptions" class="bg-light">
+    <div class="container_fluid">
       <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Services we offer</h2>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+        <div class="col-lg-10 mx-auto">
+          <table id="mytable" class="table hover order-column nowrap">
+              <thead>
+                <tr style="text-align: right;">
+                  <th>Metropolitan Area</th>
+                  <th>Hotel</th>
+                  <th>City/Town/Area</th>
+                  <th>Brand</th>
+                  <th>Category</th>
+                  <th>Standard Points Required</th>
+                  <th>Average Value (cpp)</th>
+                  <th>Estimate Confidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Toronto, Ontario</td>
+                  <td>Delta Hotels Toronto East</td>
+                  <td>Toronto</td>
+                  <td>Delta Hotels and Resorts</td>
+                  <td>3</td>
+                  <td>17500</td>
+                  <td>2.69</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>Kauai, Hawaii</td>
+                  <td>Sheraton Kauai Coconut Beach Resort</td>
+                  <td>Kapaa</td>
+                  <td>Sheraton</td>
+                  <td>4</td>
+                  <td>25000</td>
+                  <td>2.37</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td>Washington DC/Baltimore</td>
+                  <td>Sheraton Pentagon City Hotel</td>
+                  <td>Arlington</td>
+                  <td>Sheraton</td>
+                  <td>4</td>
+                  <td>25000</td>
+                  <td>2.26</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>Edmonton, Alberta</td>
+                  <td>The Westin Edmonton</td>
+                  <td>Edmonton</td>
+                  <td>Westin Hotels &amp; Resorts</td>
+                  <td>3</td>
+                  <td>17500</td>
+                  <td>2.23</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>New York City, New York</td>
+                  <td>Stamford Marriott Hotel &amp; Spa</td>
+                  <td>Stamford</td>
+                  <td>Marriott Hotels &amp; Resorts</td>
+                  <td>3</td>
+                  <td>17500</td>
+                  <td>2.22</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>Chicago, Illinois</td>
+                  <td>Hotel Chicago Downtown, Autograph Collection</td>
+                  <td>Chicago</td>
+                  <td>Autograph Collection</td>
+                  <td>5</td>
+                  <td>35000</td>
+                  <td>2.18</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>Chicago, Illinois</td>
+                  <td>The Westin Chicago Northwest</td>
+                  <td>Itasca</td>
+                  <td>Westin Hotels &amp; Resorts</td>
+                  <td>3</td>
+                  <td>17500</td>
+                  <td>2.10</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>Chicago, Illinois</td>
+                  <td>Renaissance Chicago O'Hare Suites Hotel</td>
+                  <td>Chicago</td>
+                  <td>Renaissance Hotels</td>
+                  <td>4</td>
+                  <td>25000</td>
+                  <td>2.09</td>
+                  <td>High</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                 <tr style="text-align: right;">
+                  <th>Metropolitan Area</th>
+                  <th>Hotel</th>
+                  <th>City/Town/Area</th>
+                  <th>Brand</th>
+                  <th>Category</th>
+                  <th>Standard Points Required</th>
+                  <th>Average Value (cpp)</th>
+                  <th>Estimate Confidence</th>
+                </tr>
+              </tfoot>
+            </table>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <section id="methodology">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Contact us</h2>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+          <h3>Methodology</h3>
+          <p class="lead">For those of you not interested in learning</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <footer class="py-4 bg-primary">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Points Planner 2021</p>
     </div>
@@ -106,7 +209,40 @@
 
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
-
+    
+  <script src="https://code.jquery.com/jquery-3.5.1"></script>
+  <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+  <script src="DataTables/Scroller-2.0.3/js/dataTables.scroller.min.js"></script>
+  <script src="DataTables/Select-1.3.1/js/dataTables.select.min.js"></script>
+    
+  <script> $(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#mytable tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#mytable').DataTable({
+            "scrollY": 300,
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+  </script>
 </body>
 
 </html>
