@@ -114,6 +114,10 @@ ul ol {
   margin-bottom: 0;
 }
 
+li{
+  margin: 7px 0;
+}
+
 dt {
   font-weight: 700;
 }
