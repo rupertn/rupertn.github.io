@@ -49,7 +49,7 @@
 
   <header class="bg-primary text-white">
     <div class="container text-center">
-      <h2> The Best (and Worst) Value Marriott Hotel Redemptions in North America</h2>
+      <h3> The Best (and Worst) Value Marriott Hotel Redemptions in United States and Canada</h3>
       <p class="lead"><b>Written by:</b> Rupert Neve</p>
       <p class="lead"><b>Last updated on:</b> February 4th, 2021</p>
     </div>
@@ -70,7 +70,7 @@
             <br>
           <p>Now, for those not familiar with concept of reward points valuation, I will briefly explain the concept. When you redeem points for a stay at a Marriott property, the number of points required per night will depend <i>primarily</i> on the category of hotel. The higher the category, the greater the number of points required. To calculate the value we are recieving for our points redemption we need to compare the number of points required to the cost of purchasing the same room on the same night. For example, say I were to redeem points for a 1-night stay at a category 4 hotel (typically requiring 25,000 points per night) when the cash rate for a standard room was $200. In this instance, the value we recieve for our points works out to $200 / 25,000 points = 0.80 cents per point (cpp).</p>
           <br>
-          <p>Equipped with an understanding of how to value points redemptions, the table below highlights the estimated average redemption value for each hotel, based on pricing data from approximately 25 random dates over the next year. <b>Among all hotels in the table, the average redemption value was 0.93 cents per point</b>, not too far from the Marriott points valuation of 0.80 cents per point given by many popular travel blogs. Since these are average values, and both the number of points required and the price of the room can vary depending on the date, <b>I advise against using this information to definitively conclude one hotel offers better redemption value than another. Rather, I suggest using it to narrow down which hotels you should target and which to avoid when searching for your next points redemption</b>. Of course, at the end of the day, redemption value is one only one aspect of many to consider when redeeming your points. Some of the properties with the worst average also happen to be the </p>
+          <p>Equipped with an understanding of how to value points redemptions, the table below highlights the estimated average redemption value for each hotel, based on pricing data from approximately 25 random dates over the next year. <b>Among all hotels in the table, the average redemption value was 0.93 cents per point</b>, not too far from the Marriott points valuation of 0.80 cents per point given by many popular travel blogs. Since these are average values, and both the number of points required and the price of the room can vary depending on the date, <b>I advise against using this information to definitively conclude one hotel offers better redemption value than another. Rather, I suggest using it to narrow down which hotels to target and which to avoid when searching for your next points redemption</b>. Of course, at the end of the day, redemption value is one only one aspect of many to consider when redeeming your points. Some of the properties with the worst average value also happen to be the some of the most popular and highest-rated properties in Marriotts portfolio.</p>
         </div>
       </div>
     </div>
@@ -199,12 +199,16 @@
         <div class="col-lg-9 mx-auto lead">
           <h3>Methodology</h3>
             <br>
-          <p>In this section, I will discuss how I arrived at the average value estimates shown in the table above. For many, I expect that understanding the technical intricacies of performing this analysis is not of great interest. However, to appease those that are interested, I will provide two methodologies, each at a different level of granularity.</p>
+          <p>In this section, I will discuss how I arrived at the average redemption value estimates shown in the table above. For many, I expect that understanding the technical intricacies of performing this analysis is not of great interest. However, to appease those that are interested, I will provide two methodologies, each at a different level of granularity.</p>
             <br>
             <h5>High-Level Explanation</h5>
-            <p>Now, in late 2019, Marriott implemented a partial form of dynamic pricing of hotel redemptions. This came in the form of introducing off-peak and peak points pricing to hotel redemptions.   </p>
             <br>
-            <p>The first step was to collect hotel pricing data for all premium and luxury brand hotels under the Marriott Chain in North American cities.  Once collected, the following process was applied to <b>each hotel</b> to estimate its average redemption value in cents per point:</p>
+            <p>To estimate the average redemption value for each hotel, we need determine the <b>average number of points required per night</b> and the <b>average price of the cheapest redeemable room</b>. 
+            <p>Unfortunately, in late 2019, Marriott introduced a partial form of dynamic pricing for points redemptions, coming in the form of off-peak, standard, and peak pricing. Previously, each hotel would require a standard number of points required per night that would not fluctuate for any reason. This change made calculating the precise average number of points required nearly impossible as Marriott does not use a defined period of dates for each points pricing level, rather a proprietary algorithm. Fortunately, observations from several travel blogs found that most dates require the standard number of points, suggesting the average number of points required is likely to hover around the standard points rate.</p>
+            <br>
+            <p> 
+                
+                The first step was to collect hotel pricing data for all premium and luxury brand hotels under the Marriott Chain in North American cities.  Once collected, the following process was applied to <b>each hotel</b> to estimate its average redemption value in cents per point:</p>
             <ol>
                 <li>Find the cheapest available flexible rate (incl. taxes and fees) on each date.</li>
                 <li>Use statistical methods to detect and remove any signicant outliers from the list of cheapest flexible rates.</li>
@@ -215,8 +219,8 @@
             <br>
             <p>If you were to perform this analysis a couple of years ago, when global travel wasn't restricted due to COVID-19, the methodology above would almost certaintly overestimate each hotels average redemption value. Normally, when travel demand is high, many popular hotels will sell out of redeemable rooms months in advance, meaning if we simply took the cheapest flexible rate it could represent the rate for a non-redeemable room, which are typically priced much higher than redeemable rooms. With travel demand at a fraction of pre-COVID levels, this problem mostly mitigates itself, as most hotels should offer redemption availability on any given night. Of course, since we can't gaurantee this, we can use statistical methods to identify and remove any high-priced flexible rates that likely belong to non-redeemable rooms such as executive suites.</p>
             <br>
-            <p>Despite all the assumptions, I am confident in the estimates I have produced are accurate</p>
             <h5>Technical Process</h5>
+            <br>
             <ul>
                 <li>Languages: Python, HTML, CSS, Javascript</li>
                 <li>Python packages: pandas, requests, xml, datetime</li>
