@@ -199,11 +199,7 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
-}
-
-img.resize{
-    height: auto;
-    width: auto;
+  margin-top: 30px;
 }
 
 svg {
