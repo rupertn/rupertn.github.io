@@ -37,7 +37,7 @@
             <a class="nav-link js-scroll-trigger" href="#overview">Overview</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#redemptions">Marriott Redemption Values</a>
+            <a class="nav-link js-scroll-trigger" href="#redemptions">Average Redemption Values</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#methodology">Methodology</a>
@@ -49,9 +49,10 @@
 
   <header class="bg-primary text-white">
     <div class="container text-center">
-      <h3> The Best (and Worst) Value Marriott Hotel Redemptions in United States and Canada</h3>
+      <h3> The Best (and Worst) Value Marriott Hotel Redemptions in the United States and Canada</h3>
+      <p class="lead">Calculating the average redemption value of nearly 800 Marriott properties.</p>
       <p class="lead"><b>Written by:</b> Rupert Neve</p>
-      <p class="lead"><b>Last updated on:</b> February 4th, 2021</p>
+      <p class="lead"><b>Last updated on:</b> February 5th, 2021</p>
     </div>
   </header>
 
@@ -61,7 +62,7 @@
         <div class="col-lg-9 mx-auto lead">
           <p>As the largest hotel chain in the world, Marriott's property portfolio offers something for all types of travellers, from those looking for a cheap on-the-road stay, to those seeking a week-long get-away at some of the most luxurious properties in the world. For many, Marriott's loyalty program, <b>Marriott Bonvoy</b>, is the ticket to staying at some of Marriott's most aspirational properties without breaking the bank account. By earning Marriott points through hotel stays, credit card spending & sign-up bonuses, as well as other promotional events such as car rentals or dining, members can quickly build a large stockpile of points which can be redeemed for hotel stays. However, with more than 5000 properties in North America, figuring out how to maximize the value of your hard-earned points can be challenging.</p>
             <br>
-            <p>To help, <b>I have estimated the average redemption value for all premium and luxury brand Marriott properties in 53 regions (mostly cities) across the United States and Canada</b>. As a reminder, below are the brands that Marriott categorizes as a premium or luxury brand:</p>
+            <p>To help, <b>I have estimated the average redemption value for all premium and luxury brand Marriott properties in the major cities across the United States and Canada</b>. As a reminder, below are the brands that Marriott categorizes as a premium or luxury brand:</p>
           <ul>
             <li><b>Luxury Brands:</b> The Ritz-Carlton, St. Regis, JW Marriott, W Hotels, The Luxury Collection, EDITION Hotels</li>
             <li><b>Premium Brands:</b> Marriott Hotels, Sheraton, Delta Hotels, Le MERIDIEN, Westin, Renaissance Hotels</li>
@@ -199,6 +200,8 @@
                 </tr>
               </tfoot>
             </table>
+            <br>
+            <p>Note(s): Currency is in USD. Confidence is based on the sample size of dates used in the average value calculation.</p>
         </div>
       </div>
     </div>
@@ -208,29 +211,28 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-9 mx-auto lead">
-          <h3>Methodology</h3>
-            <br>
-            <p>In this section, I will discuss how I arrived at the average redemption value estimates shown in the table above. For many, I expect that understanding the technical intricacies of performing this analysis is not of great interest. However, to appease those that are interested, I will provide two methodologies, each at a different level of granularity.</p>
-            <br>
-          <h5>High-Level Explanation</h5>
-            <p>To estimate the average redemption value for each hotel, we need determine the <b>average number of points required per night</b> and the <b>average rate of the cheapest redeemable room.</b></p> 
-            <p>Unfortunately, in late 2019, Marriott introduced a partial form of dynamic pricing for points redemptions, coming in the form of off-peak, standard, and peak pricing. Previously, each hotel would require a standard number of points per night that would not fluctuate. The transition to partial dynamic pricing makes calculating the precise average number of points required nearly impossible as Marriott does not use a defined period of dates for each points pricing level, rather an undisclosed algorithm. Fortunately, observations from several travel blogs found that most dates require the standard number of points, suggesting the average number of points required is likely to hover around the standard points rate.</p>
-            <p>Next, to acquire an unbiased estimate for the average rate of the cheapest redeemable room we need to gather pricing data from a large number of random dates. If the random sample of dates is sufficiently large, we should be able to generate a good approximation of the true average redeemable room rate. In total, for each hotel, pricing data for approximately 25 randomly selected dates from May 1st, 2021 onwards was collected. The 3 month buffer (from the time of writing this article) was used to reduce the effect of deviations from the standard pricing models due to COVID-19. Beyond 3 months, room rates should more closely reflect those observed in previous years for a given date. Once the pricing data was collected, the following process was applied to <b>each hotel</b> to estimate the average redemption value in cents per point:</p>
+         <br>
+          <h5>How can we accurately calculate the average redemption value for each hotel?</h5>
+            <p>In order to estimate the average redemption value for each hotel, we need to determine the <b>average number of points required per night</b> and the <b>average rate of the cheapest redeemable room.</b></p> 
+            <p>Unfortunately, in late 2019, Marriott introduced a partial form of dynamic pricing for points redemptions, coming in the form of off-peak, standard, and peak pricing. Previously, each hotel would require a standard number of points per night that would remain constant. Now, the number of points required can vary by date, requiring one of the three points price levels, off-peak, standard, or peak. This transition makes calculating the precise average number of points required nearly impossible as Marriott does not use a defined period of dates for each points pricing level, rather an undisclosed algorithm. Fortunately, observations from several travel blogs found that most dates require the standard number of points, suggesting the average number of points required is likely to hover around the standard points rate.</p>
+            <p>Next, to acquire an unbiased estimate for the average rate of the cheapest redeemable room we need to gather pricing data from a large number of random dates. If the random sample of dates is sufficiently large, we should be able to generate a good approximation of the <i>true</i> average redeemable room rate. In total, for each hotel, pricing data from approximately 25 randomly selected dates from May 1st, 2021 onwards was collected. The 3 month buffer (from the time of writing this article) was used to reduce the effect of deviations from the standard hotel pricing models due to COVID-19. Beyond 3 months, room rates should more closely reflect those observed in previous years for a given date. Once the pricing data was collected, the following process was applied to <b>each hotel</b> to estimate the average redemption value in cents per point:</p>
             <ol>
                 <li>Find the cheapest available flexible rate (incl. taxes and fees) on each date.</li>
                 <li>Use statistical methods to detect and remove any signicant outliers from the list of cheapest flexible rates.</li>
                 <li>Average the remaining flexible rates to find the average cheapest flexible rate.</li>
                 <li>Divide the average cheapest flexible rate by the <b>standard</b> number of points required per night to estimate average redemption value.</li>
-                <li>Estimate confidence in the calculated redemption value based on the sample size of the dates with available pricing data.</li>
+                <li>Estimate confidence in the calculated redemption value based on the sample size of dates with available pricing data.</li>
             </ol>
             <br>
-            <p>If you were to perform this analysis a couple of years ago, when global travel was not restricted due to COVID-19, the methodology above would almost certainly overestimate each hotels average redemption value. Normally, when travel demand is high, many popular hotels sell out of redeemable rooms months in advance, meaning if we simply took the cheapest flexible rate it could represent the rate for a non-redeemable room, which are typically priced much higher than redeemable rooms. With travel demand at a fraction of pre-COVID levels, this problem mostly mitigates itself, as most hotels should offer redemption availability on any given night. Of course, since we cannot guarantee this, we can use statistical methods to identify and remove any high-priced flexible rates that likely belong to non-redeemable rooms such as executive suites.</p>
+            <p><b>Note:</b> If you were to perform this analysis a couple of years ago, when global travel was not restricted due to COVID-19, the methodology above would almost certainly overestimate each hotel's average redemption value. Normally, when travel demand is high, many popular hotels sell out of redeemable rooms months in advance, meaning if we simply took the cheapest flexible rate it could represent the rate for a non-redeemable room, which are typically much higher than that of a redeemable room. With travel demand at a fraction of pre-COVID levels, this problem mostly mitigates itself, as most hotels should offer redemption availability on any given night. Of course, since we cannot guarantee this, we can use statistical methods to identify and remove any high-priced flexible rates that likely belong to non-redeemable rooms such as executive suites.</p>
             <br>
           <h5>Technical Process</h5>
-            <ul>
-                <li>Languages: Python, HTML, CSS, Javascript</li>
-                <li>Python packages: pandas, requests, xml, datetime</li>
-            </ul>
+            <p>If you are interested in seeing how I performed this analysis from a technical standpoint, the following is a link to the GitHub respository containing the source code:</p>
+            <div class="col text-center">
+              <a href="https://github.com/rupertn/best_marriott_redemptions" target="_blank" rel="noopener noreferrer">
+                <input type="image" src="/images/GitHub-Mark-64px.png" style="width: 40px"/>
+              </a>
+          </div>
         </div>
       </div>
     </div>
