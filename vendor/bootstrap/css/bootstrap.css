@@ -201,6 +201,11 @@ img {
   border-style: none;
 }
 
+img.resize{
+    height: auto;
+    width: auto;
+}
+
 svg {
   overflow: hidden;
   vertical-align: middle;
